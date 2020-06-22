@@ -1,11 +1,14 @@
 #define MODE_HELLO_WORLD    (1)
 #define MODE_HELLO_KM       (2)
+#define MODE_HELLO_NAME     (3)
 
 #define WAIT_TIME           (20) // [ms]
 
 
 int g_display_mode;
 int g_count = 0;
+
+
 
 void setup() 
 {
@@ -25,8 +28,8 @@ void loop()
 		else if(getstr == 'k') {
             g_display_mode = MODE_HELLO_KM;
         }
-    else{
-           g_display_mode = MODE_HELLO_name;
+    else if(getstr = Serial.read()){
+           g_display_mode = MODE_HELLO_NAME;
         }
     }
 
@@ -39,8 +42,8 @@ void loop()
         else if(g_display_mode == MODE_HELLO_KM) {
         	Serial.print("Hello KM "); // output string (and line feed)
         }
-        else {
-        	Serial.print("Hello ??? "); // output string (and line feed)
+        else if(g_display_mode == MODE_HELLO_NAME){
+        	Serial.print("Hello Mayuko "); // output string (and line feed)
         }
         // display time
         char txt[128];
